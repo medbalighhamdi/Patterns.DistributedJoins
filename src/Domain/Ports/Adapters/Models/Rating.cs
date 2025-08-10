@@ -1,0 +1,1 @@
+public record Rating(Guid Id, decimal Score, string Comment);
