@@ -1,6 +1,8 @@
 
 using DistributedJoins.Domain.Ports.Adapters.Interfaces;
-using Patterns.DistributedJoins.Domain.ProductAggregate;
+using DistributedJoins.Domain.Ports.Adapters.Models;
+using DistributedJoins.Domain.Ports.DistributedJoins.Product.Interfaces;
+using DistributedJoins.Domain.ProductAggregate;
 
 public class ProductRatingJoiner(IRatingAdapter RatingAdapter) : IProductRatingJoiner
 {

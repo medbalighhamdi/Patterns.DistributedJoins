@@ -1,4 +1,6 @@
-using Patterns.DistributedJoins.Domain.ProductAggregate;
+using DistributedJoins.Domain.ProductAggregate;
+
+namespace DistributedJoins.Domain.Ports.Repositories.Interfaces;
 
 public interface IProductRepository
 {

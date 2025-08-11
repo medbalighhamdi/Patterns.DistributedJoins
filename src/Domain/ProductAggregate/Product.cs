@@ -1,6 +1,4 @@
-using System;
-
-namespace Patterns.DistributedJoins.Domain.ProductAggregate;
+namespace DistributedJoins.Domain.ProductAggregate;
 
 public class Product
 {

@@ -1,3 +1,5 @@
+using DistributedJoins.Domain.Ports.Adapters.Models;
+
 namespace DistributedJoins.Domain.Ports.Adapters.Interfaces;
 
 public interface IRatingAdapter

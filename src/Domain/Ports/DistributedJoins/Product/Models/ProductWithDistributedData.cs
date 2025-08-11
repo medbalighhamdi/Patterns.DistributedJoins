@@ -1,3 +1,6 @@
-using Patterns.DistributedJoins.Domain.ProductAggregate;
+using DistributedJoins.Domain.Ports.Adapters.Models;
+using DomainProduct = DistributedJoins.Domain.ProductAggregate.Product;
 
-public record ProductWithDistributedData(Product Product, User PostedByUser, Rating Rating);
+namespace DistributedJoins.Domain.Ports.DistributedJoins.Product.Models;
+
+public record ProductWithDistributedData(DomainProduct Product, User PostedByUser, Rating Rating);

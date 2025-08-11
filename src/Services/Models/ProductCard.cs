@@ -1,4 +1,5 @@
-using Patterns.DistributedJoins.Domain.ProductAggregate;
+using DistributedJoins.Domain.Ports.Adapters.Models;
+using DistributedJoins.Domain.ProductAggregate;
 
 public record ProductCard(Product Product, ProductCardUserInfo UserInfo, ProductCardRatinginfo RatingInfo);
 

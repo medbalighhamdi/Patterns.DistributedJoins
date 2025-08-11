@@ -1,4 +1,6 @@
-using Patterns.DistributedJoins.Domain.ProductAggregate;
+using DistributedJoins.Domain.Ports.Repositories.Interfaces;
+using DistributedJoins.Domain.ProductAggregate;
+
 
 /// <summary>
 /// Mock implementation returning a mock product list for simplicity

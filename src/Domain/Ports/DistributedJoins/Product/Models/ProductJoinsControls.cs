@@ -1,12 +1,13 @@
+namespace DistributedJoins.Domain.Ports.DistributedJoins.Product.Models;
 public record ProductJoinControls
 {
-    public bool IncludeUser { get; init; } = false;
-    public bool IncludeRating { get; init; } = false;
+    public bool JoinWithUser { get; init; } = false;
+    public bool JoinWithRating { get; init; } = false;
 
     private ProductJoinControls()
     {
-        IncludeUser = false;
-        IncludeRating = false;
+        JoinWithUser = false;
+        JoinWithRating = false;
     }
     public static ProductJoinControls Initiate()
     {
@@ -15,11 +16,11 @@ public record ProductJoinControls
 
     public ProductJoinControls InnerJoinUsers()
     {
-        return this with { IncludeUser = true };
+        return this with { JoinWithUser = true };
     }
 
     public ProductJoinControls InnerJoinRatings()
     {
-        return this with { IncludeRating = true };
-    }   
+        return this with { JoinWithRating = true };
+    }
 }

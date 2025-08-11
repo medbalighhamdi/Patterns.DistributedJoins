@@ -1,4 +1,8 @@
 ﻿
+using DistributedJoins.Domain.Ports.DistributedJoins.Product.Interfaces;
+using DistributedJoins.Domain.Ports.DistributedJoins.Product.Models;
+using DistributedJoins.Services.Interfaces;
+
 namespace DistributedJoins.Services;
 
 public class ProductService(IProductJoinController ProductJoinController) : IProductService

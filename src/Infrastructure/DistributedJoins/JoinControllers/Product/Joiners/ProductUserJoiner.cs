@@ -1,4 +1,7 @@
-using Patterns.DistributedJoins.Domain.ProductAggregate;
+using DistributedJoins.Domain.Ports.Adapters.Interfaces;
+using DistributedJoins.Domain.Ports.Adapters.Models;
+using DistributedJoins.Domain.Ports.DistributedJoins.Product.Interfaces;
+using DistributedJoins.Domain.ProductAggregate;
 using System.Linq;
 
 public class ProductUserJoiner(IUserAdapter UserAdapter) : IProductUserJoiner

@@ -1,4 +1,7 @@
-using Patterns.DistributedJoins.Domain.ProductAggregate;
+using DistributedJoins.Domain.Ports.Adapters.Interfaces;
+using DistributedJoins.Domain.Ports.Adapters.Models;
+
+namespace DistributedJoins.Infrastructure.Adapters;
 
 public class MockUserAdapter : IUserAdapter
 {

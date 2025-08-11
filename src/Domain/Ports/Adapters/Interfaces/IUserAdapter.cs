@@ -1,3 +1,7 @@
+using DistributedJoins.Domain.Ports.Adapters.Models;
+
+namespace DistributedJoins.Domain.Ports.Adapters.Interfaces;
+
 /// <summary>
 /// Adapter interface for user-related operations queried from a user service.
 /// </summary>
