@@ -66,5 +66,5 @@ classDiagram
 Distributed Join pattern is applied in a context of HTTP-based distributed architectures in case we need:
   - Performant join logic between local and remote service entities with tackling the most common pitfalls with HTTP-based communications.
   - Abstracting remote service aggregation logic into a single class for multiple consumer usage.
-  - A declarative consumer approach that conditions the distributed join logic.
+  - A declarative DDD oriented approach that deports service fetching logic into a class holding a central responsability. 
   - To support DDD with centralizing service distribution logic in Infrastructure layer.
