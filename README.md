@@ -52,13 +52,12 @@ classDiagram
       +ConsumeXXX()
     }
     class JoinControls{
-      +JoinWithYYY boolean
-      +JoinWithZZZ boolean
-      +JoinWithTTT boolean
-      +JoinWithAllDistributedData() JoinControls
-      +OnlyJoinWithYYY() JoinControls
-      +OnlyJoinWithTTT() JoinControls
-      +OnlyJoinWithZZZ() JoinControls
+      -JoinControls()
+      +Initiate() void
+      +InnerJoinXXX() JoinControls
+      +InnerJoinZZZ() JoinControls
+      +InnerJoinYYY() JoinControls
+      +
     }
 ```
 
