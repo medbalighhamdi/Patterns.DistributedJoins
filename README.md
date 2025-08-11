@@ -35,7 +35,7 @@ classDiagram
     XXXJoinController *-- XXXZZZJoiner
     XXXJoinController *-- XXXTTTJoiner
     XXXJoinController <-- XXXConsumer  : Calls with join controls
-    XXXConsumer o--  JoinControls : Builds
+    XXXConsumer -->  JoinControls : Builds
     class XXXYYYJoiner{
       +JoinWithYYY(IEnumerable~XXX~) IDictionary~int, YYY~
     }
