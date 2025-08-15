@@ -62,7 +62,7 @@ classDiagram
     }
     class JoinControls{
       -JoinControls()
-      +Initiate() void
+      +Build() void
       +InnerJoinXXX() JoinControls
       +InnerJoinZZZ() JoinControls
       +InnerJoinYYY() JoinControls
