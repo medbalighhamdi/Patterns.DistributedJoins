@@ -62,9 +62,24 @@ classDiagram
 ```
 
 # Use cases
-The Distributed Join pattern is applied in a context of HTTP-based distributed architectures in case we need:
+The Distributed Join pattern is applied in a context of HTTP-based distributed architectures in case you need:
   - Build performant and solid Infrastructure layer logic for joining local and remote service entities with tackling the most common pitfalls with HTTP-based communications.
   - Abstracting remote service aggregation logic into a single class for multiple consumer usage.
   - A declarative DDD-oriented approach that demegates service aggregation logic into a class holding a central responsibility.
   - A rich domain layer with only service related logic.
-  - A unified, performant API Gateway logic for you frontend or consumer needs. 
+  - An [API Composition pattern](https://microservices.io/patterns/data/api-composition.html) with performant and centralized remote HTTP services aggregation. 
+  
+# Repository usage
+
+## Prerequisites
+
+The solution is currently built using .NET 9.
+.NET SDK is mondatory for building and running the solution.
+
+## Build
+
+Build the demonstrative solution using the sln file under the root folder.
+
+## Run
+
+Run the API project under src/API folder using dotnet run command.
