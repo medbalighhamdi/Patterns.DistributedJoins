@@ -6,7 +6,6 @@ using DistributedJoins.Infrastructure.Adapters;
 using DistributedJoins.Infrastructure.DistributedJoins.JoinControllers.Product;
 using DistributedJoins.Services;
 using DistributedJoins.Services.Interfaces;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,10 +17,10 @@ builder.Services.AddOpenApi();
 #region service registrations
 
 var services = builder.Services;
-RegisterRepositories(services);
-RegisterAdapters(services);
-RegisterDistributedJoins(services);
-RegisterServices(services);
+services.RegisterRepositories();
+services.RegisterAdapters();
+services.RegisterDistributedJoins();
+services.RegisterServices();
 
 #endregion
 
@@ -48,25 +47,25 @@ app.Run();
 public static partial class Program
 {
 
-    private static void RegisterRepositories(IServiceCollection services)
+    private static void RegisterRepositories(this IServiceCollection services)
     {
         services.AddScoped<IProductRepository, MockProductRepository>();
     }
 
-    private static void RegisterAdapters(IServiceCollection services)
+    private static void RegisterAdapters(this IServiceCollection services)
     {
         services.AddScoped<IUserAdapter, MockUserAdapter>();
         services.AddScoped<IRatingAdapter, MockRatingAdapter>();
     }
 
-    private static void RegisterDistributedJoins(IServiceCollection services)
+    private static void RegisterDistributedJoins(this IServiceCollection services)
     {
         services.AddScoped<IProductUserJoiner, ProductUserJoiner>();
         services.AddScoped<IProductRatingJoiner, ProductRatingJoiner>();
         services.AddScoped<IProductJoinController, ProductJoinController>();
     }
 
-    private static void RegisterServices(IServiceCollection services)
+    private static void RegisterServices(this IServiceCollection services)
     {
         services.AddScoped<IProductService, ProductService>();
     }
