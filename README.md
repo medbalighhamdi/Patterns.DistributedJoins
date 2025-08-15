@@ -83,3 +83,8 @@ Build the demonstrative solution using the sln file under the root folder.
 ## Run
 
 Run the API project under src/API folder using dotnet run command.
+
+# Enhancements
+
+- Managing not found user / rating references with null tolerant mapping with remote services.
+- Exception handling and possibility to configure exception settings from calling consumer code, like done for join controls.
