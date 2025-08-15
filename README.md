@@ -1,9 +1,9 @@
 # Distributed Joins
 
 Distributed join is a pattern for HTTP-based microservices.
-They allow streamlining remote service consumption on a single interface basis with optimum performance following HTTP clients' usage best practices.
+They enable streamlining remote service consumption on a single interface basis, with optimal performance following HTTP clients' usage best practices.
 
-# Patterns and sub-patterns
+# Pattern and sub-patterns introductions
 
 Distributed joins englobes an ensemble of collaborating sub-patterns.
 
@@ -23,8 +23,8 @@ JoinProductWithDistributedData method:
 ## Join Controls pattern
 
 JoinControl records conditions JoinController class behavior.
-They hold boolean properties that are built by consumers.
-Consumers can benefit from a fluent, builder-pattern-based join controls creation syntax using custom build methods that are defined in the same record.
+They hold boolean properties that consumers build.
+Consumers can benefit from a fluent, builder-pattern-based join control creation syntax using custom build methods defined in the same record.
 
 # Class Diagram
 
@@ -34,7 +34,7 @@ classDiagram
     XXXJoinController *-- XXXYYYJoiner
     XXXJoinController *-- XXXZZZJoiner
     XXXJoinController *-- XXXTTTJoiner
-    XXXJoinController <-- XXXConsumer : Calls with join controls
+    XXXJoinController <-- XXXConsumer: Calls with join controls
     XXXConsumer -->  JoinControls: Builds
     class XXXYYYJoiner{
       +JoinWithYYY(IEnumerable~XXX~) IDictionary~int, YYY~
@@ -66,7 +66,7 @@ The Distributed Join pattern is applied in a context of HTTP-based distributed a
   - Build performant and solid Infrastructure layer logic for joining local and remote service entities with tackling the most common pitfalls with HTTP-based communications.
   - Abstracting remote service aggregation logic into a single class for multiple consumer usage.
   - A declarative DDD-oriented approach that demegates service aggregation logic into a class holding a central responsibility.
-  - A rich domain layer with only service related logic.
+  - A rich domain layer with only service-related logic.
   - An [API Composition pattern](https://microservices.io/patterns/data/api-composition.html) with performant and centralized remote HTTP services aggregation. 
   
 # Repository usage
@@ -74,15 +74,15 @@ The Distributed Join pattern is applied in a context of HTTP-based distributed a
 ## Prerequisites
 
 The solution is currently built using .NET 9.
-.NET SDK is mondatory for building and running the solution.
+.NET SDK is mandatory for building and running the solution.
 
 ## Build
 
-Build the demonstrative solution using the sln file under the root folder.
+The solution is built using the sln file located under the root folder.
 
 ## Run
 
-Run the API project under src/API folder using dotnet run command.
+Run the API project located under the src/API folder using the dotnet run command.
 
 # Enhancements
 
