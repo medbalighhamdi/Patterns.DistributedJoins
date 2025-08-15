@@ -5,25 +5,34 @@ They enable streamlining remote service consumption on a single interface basis,
 
 # Pattern and sub-patterns introductions
 
-Distributed joins englobes an ensemble of collaborating sub-patterns.
+Distributed joins englobe an ensemble of collaborating sub-patterns, leading to a better usage of HTTP communications.
 
-## Joiner pattern
+## Context
+
+Let's imagine we have boxes that need to be transported from a warehouse (point A) to our store (point B). 
+We could make a round trip for each box, but this would be time-consuming, costly, and inefficient.
+The most logical solution is to load the truck to maximum capacity before leaving, in order to limit the number of trips.
+This is exactly the idea behind the Distributed Joins pattern: rather than sending an HTTP request per product to retrieve the associated customer details, we group all the requests into a single call, which will return the information for all the necessary customers in one go. Then all that remains is to “unload” and associate each customer detail with its product—a bit like distributing the boxes to the right shelf once you arrive.
+
+## Distributed Joins patterns
+
+### Joiner pattern
 
 Joiner classes have JoinWith methods.
 JoinWith method: 
    - Fetches entities from the local service repository by the provided ID list in the method parameter.
    - Returns a mapping of remote entities by local entity ID.
      
-## Join Controller pattern
+### Join Controller pattern
 
 JoinController classes have JoinProductWithDistributedData method.
 JoinProductWithDistributedData method:
   - Conditions join calls based on the Join Controls values provided in the method parameter.
+  - Aggregates join results into a unified product X distributed data-transfer object.
 
-## Join Controls pattern
+### Join Controls pattern
 
-JoinControl records conditions JoinController class behavior.
-They hold boolean properties that consumers build.
+JoinControl records alter JoinControllers classes' behaviors based on join control boolean values.
 Consumers can benefit from a fluent, builder-pattern-based join control creation syntax using custom build methods defined in the same record.
 
 # Class Diagram
