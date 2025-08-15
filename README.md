@@ -1,7 +1,7 @@
 # Distributed Joins
 
 Distributed join is a pattern for HTTP-based microservices.
-They allow streamlining remote service consumption on a single interface basis with optimum performance in accordance to HTTP clients usage best practises.
+They allow streamlining remote service consumption on a single interface basis with optimum performance following HTTP clients' usage best practices.
 
 # Patterns and sub-patterns
 
@@ -11,14 +11,14 @@ Distributed joins englobes an ensemble of collaborating sub-patterns.
 
 Joiner classes have JoinWith methods.
 JoinWith method: 
-   - Fetches entities from local service repository by the provided id list in method parameter.
-   - Returns a mapping of remote entities by local entity id.
+   - Fetches entities from the local service repository by the provided ID list in the method parameter.
+   - Returns a mapping of remote entities by local entity ID.
      
 ## Join Controller pattern
 
 JoinController classes have JoinProductWithDistributedData method.
 JoinProductWithDistributedData method:
-  - Conditions join calls based on Join Controls values provided in parameter.
+  - Conditions join calls based on the Join Controls values provided in the method parameter.
 
 ## Join Controls pattern
 
@@ -34,8 +34,8 @@ classDiagram
     XXXJoinController *-- XXXYYYJoiner
     XXXJoinController *-- XXXZZZJoiner
     XXXJoinController *-- XXXTTTJoiner
-    XXXJoinController <-- XXXConsumer  : Calls with join controls
-    XXXConsumer -->  JoinControls : Builds
+    XXXJoinController <-- XXXConsumer : Calls with join controls
+    XXXConsumer -->  JoinControls: Builds
     class XXXYYYJoiner{
       +JoinWithYYY(IEnumerable~XXX~) IDictionary~int, YYY~
     }
@@ -62,10 +62,9 @@ classDiagram
 ```
 
 # Use cases
-
-Distributed Join pattern is applied in a context of HTTP-based distributed architectures in case we need:
+The Distributed Join pattern is applied in a context of HTTP-based distributed architectures in case we need:
   - Build performant and solid Infrastructure layer logic for joining local and remote service entities with tackling the most common pitfalls with HTTP-based communications.
   - Abstracting remote service aggregation logic into a single class for multiple consumer usage.
-  - A declarative DDD oriented approach that deports service aggregation logic into a class holding a central responsability.
+  - A declarative DDD-oriented approach that demegates service aggregation logic into a class holding a central responsibility.
   - A rich domain layer with only service related logic.
   - A unified, performant API Gateway logic for you frontend or consumer needs. 
