@@ -4,5 +4,5 @@ namespace DistributedJoins.Domain.Ports.Adapters.Interfaces;
 
 public interface IRatingAdapter
 {
-    Task<IEnumerable<Rating>> GetRatingsByIds(IEnumerable<Guid> ratingIds, CancellationToken cancellationToken);
+    Task<IEnumerable<Rating>> GetRatingsByIds(HashSet<Guid> ratingIds, CancellationToken cancellationToken);
 }

@@ -1,0 +1,9 @@
+@DistributedJoins.Api_HostAddress = http://localhost:5092
+
+GET {{DistributedJoins.Api_HostAddress}}/products
+
+Accept: application/json
+Content-Type: application/json
+
+
+###

@@ -35,10 +35,10 @@ public class ProductJoinController(IProductUserJoiner ProductUserJoiner, IProduc
   ///</summary>
   private async Task<IDictionary<Guid, User>> JoinWithUser(
     IEnumerable<DomainProduct> products,
-    ProductJoinControls joinsControl,
+    ProductJoinControls joinControls,
     CancellationToken cancellationToken)
   {
-    if (!joinsControl.JoinWithUser)
+    if (!joinControls.JoinWithUser)
       return new Dictionary<Guid, User>();
     // join got products with distributed users data
     return await ProductUserJoiner.JoinWithUser(products, cancellationToken);
@@ -49,10 +49,10 @@ public class ProductJoinController(IProductUserJoiner ProductUserJoiner, IProduc
   ///</summary>
   private async Task<IDictionary<Guid, Rating>> JoinWithRating(
     IEnumerable<DomainProduct> products,
-    ProductJoinControls joinsControl,
+    ProductJoinControls joinControls,
     CancellationToken cancellationToken)
   {
-    if (!joinsControl.JoinWithRating)
+    if (!joinControls.JoinWithRating)
       return new Dictionary<Guid, Rating>();
     // join got products with distributed ratings data
     return await ProductRatingJoiner.JoinWithRating(products, cancellationToken);

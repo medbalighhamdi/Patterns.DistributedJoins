@@ -9,7 +9,7 @@ public record ProductJoinControls
         JoinWithUser = false;
         JoinWithRating = false;
     }
-    public static ProductJoinControls Initiate()
+    public static ProductJoinControls Build()
     {
         return new ProductJoinControls();
     }

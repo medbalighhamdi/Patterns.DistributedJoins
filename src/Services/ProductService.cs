@@ -7,12 +7,14 @@ namespace DistributedJoins.Services;
 
 public class ProductService(IProductJoinController ProductJoinController) : IProductService
 {
-    public async Task<IEnumerable<ProductCard>> GetCards(IEnumerable<Guid> productIds, CancellationToken cancellationToken)
+    public async Task<IEnumerable<ProductCard>> GetCards(CancellationToken cancellationToken)
     {
         var productsWithDistributedData = await ProductJoinController.JoinProductWithDistributedData(
             0,
             100,
-            ProductJoinControls.Initiate().InnerJoinUsers().InnerJoinRatings(),
+            ProductJoinControls.Build()
+                .InnerJoinUsers()
+                .InnerJoinRatings(),
             cancellationToken);
 
         return productsWithDistributedData.Select(p =>

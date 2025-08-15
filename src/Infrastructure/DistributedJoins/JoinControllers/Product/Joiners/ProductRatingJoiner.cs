@@ -11,7 +11,7 @@ public class ProductRatingJoiner(IRatingAdapter RatingAdapter) : IProductRatingJ
         // 1 - index concerned ratings from rating service
       var ratingIds = products.Select(p => p.RatingId).Distinct();
       var distributedRatings = await RatingAdapter.GetRatingsByIds(
-        ratingIds, cancellationToken);
+        ratingIds.ToHashSet(), cancellationToken);
       var joinedRatingsByIdMap = distributedRatings.ToDictionary(r => r.Id,
                                                                  r => r);
 

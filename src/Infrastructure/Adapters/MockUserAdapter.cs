@@ -1,25 +1,26 @@
 using DistributedJoins.Domain.Ports.Adapters.Interfaces;
 using DistributedJoins.Domain.Ports.Adapters.Models;
+using DistributedJoins.Domain.Ports.TestData;
 
 namespace DistributedJoins.Infrastructure.Adapters;
 
 public class MockUserAdapter : IUserAdapter
 {
-    private readonly Dictionary<Guid, User> _users;
+    private readonly List<User> _users;
 
     public MockUserAdapter()
     {
-        _users = new Dictionary<Guid, User>
+        _users = new List<User>
         {
-            { Guid.NewGuid(), new User(Guid.NewGuid(), "Alice", "alice@domain.com") },
-            { Guid.NewGuid(), new User(Guid.NewGuid(), "Bob", "bob@domain.com")},
-            { Guid.NewGuid(), new User(Guid.NewGuid(), "Charlie", "charlie@domain.com") }
+            new User(IdConsts.User1Id, "Alice", "alice@domain.com"),
+            new User(IdConsts.User2Id, "Bob", "bob@domain.com"),
+            new User(IdConsts.User3Id, "Charlie", "charlie@domain.com")
         };
     }
 
-    public Task<IEnumerable<User>> GetUsersByIds(IEnumerable<Guid> userIds, CancellationToken cancellationToken)
+    public Task<IEnumerable<User>> GetUsersByIds(HashSet<Guid> userIds, CancellationToken cancellationToken)
     {
-        var result = _users.Where(u => userIds.Contains(u.Key)).Select(u => u.Value);
-        return Task.FromResult(result.AsEnumerable());
+        var filteredUsers = _users.Where(remoteUser => userIds.Contains(remoteUser.Id));
+        return Task.FromResult(filteredUsers.AsEnumerable());
     }
 }

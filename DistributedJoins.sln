@@ -21,8 +21,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api ", "Api ", "{D00C3EA6-7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedJoins.Api", "src\Api\DistributedJoins.Api.csproj", "{8B43DD4E-9BBE-4B49-94C8-74DF645D2B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedJoins.Api", "src\Api\DistributedJoins.Api.csproj", "{44D8F81F-D9E0-4A67-AB9F-191464FF3657}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

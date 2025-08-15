@@ -15,5 +15,5 @@ public interface IUserAdapter
     /// <param name="userIds"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<IEnumerable<User>> GetUsersByIds(IEnumerable<Guid> userIds, CancellationToken cancellationToken);
+    Task<IEnumerable<User>> GetUsersByIds(HashSet<Guid> userIds, CancellationToken cancellationToken);
 }

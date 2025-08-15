@@ -11,7 +11,7 @@ public class ProductUserJoiner(IUserAdapter UserAdapter) : IProductUserJoiner
         // 1 - index concerned users
         var usersIds = products.Select(p => p.PostedByUserId).Distinct();
         var joinedUsers =await  UserAdapter.GetUsersByIds(
-          usersIds, cancellationToken);
+          usersIds.ToHashSet(), cancellationToken);
         var joinedUsersByIdMap = joinedUsers.ToDictionary(u => u.Id);
 
         // 2 - dispatch users by product

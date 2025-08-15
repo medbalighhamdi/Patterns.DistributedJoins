@@ -8,11 +8,12 @@ public class Product
     public Guid PostedByUserId { get; init; }
     public Guid RatingId { get; private set; }
 
-    public Product(Guid id, string name, DateTime inventoryCreatedAt, Guid postedByUserId)
+    public Product(Guid id, string name, DateTime inventoryCreatedAt, Guid postedByUserId, Guid ratingId)
     {
         Id = id;
         Name = name;
         InventoryCreatedAt = inventoryCreatedAt;
         PostedByUserId = postedByUserId;
+        RatingId = ratingId;
     }
 }
